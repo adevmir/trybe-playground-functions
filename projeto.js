@@ -1,7 +1,7 @@
 function compareTrue(a,b) {
-        if (a === true && b === true) {
+        if (a && b === true) {
             return 'true';
-        } else if (a === true && b === false) {
+        } else if (a && b === false) {
             return 'false';
         } else {
             return 'false';
