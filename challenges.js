@@ -1,4 +1,4 @@
-function compareTrue(value1, value2) {
-  return value1 && value2;
+// Requisito 1
+function compareTrue(a, b) {
+  return a && b;
 }
-console.log(compareTrue(true, true));
