@@ -1,7 +1,4 @@
 function compareTrue(a, b) {
-  if (a && b === true) {
-    return 'true';
-  }
-  return 'false';
+  return a && b;
 }
-console.log(compareTrue(false, true));
+console.log(compareTrue(true, true));
