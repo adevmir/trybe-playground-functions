@@ -1,12 +1,10 @@
 function compareTrue(a,b) {
         if (a === true && b === true) {
-            return 'ambos são verdadeiros';
+            return 'true';
         } else if (a === true && b === false) {
-            return 'a é verdadeiro, mas b é falso';
-        } else if (a === false && b === true) {
-            return 'b é verdadeiro, Mas a é falso';
+            return 'false';
         } else {
-            return 'Ambos são falsos';
+            return 'false';
         }
     }
-  console.log(compareTrue(true,false));
+  console.log(compareTrue(true,true));
