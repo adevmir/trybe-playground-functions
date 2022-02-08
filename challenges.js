@@ -1,4 +1,4 @@
-function compareTrue(a, b) {
-  return a && b;
+function compareTrue(value1, value2) {
+  return value1 && value2;
 }
 console.log(compareTrue(true, true));
