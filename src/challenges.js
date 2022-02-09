@@ -8,18 +8,19 @@ console.log(compareTrue(true, true));
 function calcArea(base, height) {
   return (base * height) / 2;
 }
-console.log(calcArea(10, 50))
+console.log(calcArea(10, 50));
 
 // Desafio 3
 function splitSentence(string) {
   return string.split(' ')
 }
-console.log(splitSentence('Go Trybe'))
+console.log(splitSentence('Go Trybe'));
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(a) {
+  return a[(a.length - 1)] + ', ' + a[0];
 }
+console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
 
 // Desafio 5
 function footballPoints() {
