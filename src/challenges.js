@@ -71,9 +71,22 @@ function catAndMouse(mouse, cat1, cat2) {
 console.log(catAndMouse(5, 3, 7));
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(array) {
+  let divisor = [];
+  for (let iterator of array) {
+    if (iterator % 3 === 0 && iterator % 5 === 0) {
+      divisor.push('fizzBuzz');
+    } else if (iterator % 3 === 0 && iterator % 5 != 0) {
+      divisor.push('fizz');
+    } else if (iterator % 3 != 0 && iterator % 5 === 0) {
+      divisor.push('buzz');
+    } else {
+      divisor.push('bug!');
+    }
+    }
+  return divisor;
 }
+console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
 function encode() {
