@@ -38,7 +38,7 @@ function highestCount(a) {
     }
   }
   for (let maior of a) {
-    if (maior == inic) {
+    if (maior === inic) {
       quant++;
     }
   }
@@ -47,9 +47,28 @@ function highestCount(a) {
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  if (mouse > cat1){
+    cat1 = mouse - cat1;
+  }
+  else {
+    cat1 = cat1 - mouse;
+  }
+  if (mouse > cat2){
+    cat2 = mouse - cat2;
+  }
+  else {
+    cat2 = cat2 - mouse;
+  }
+  if (cat1 < cat2){
+    return 'cat1';
+  } else if (cat1 > cat2){
+    return 'cat2';
+  } else {
+    return "os gatos trombam e o rato foge";
+  }
 }
+console.log(catAndMouse(5, 3, 7));
 
 // Desafio 8
 function fizzBuzz() {
