@@ -12,13 +12,13 @@ console.log(calcArea(10, 50));
 
 // Desafio 3
 function splitSentence(string) {
-  return string.split(' ')
+  return string.split(' ');
 }
 console.log(splitSentence('Go Trybe'));
 
 // Desafio 4
 function concatName(a) {
-  return a[(a.length - 1)] + ', ' + a[0];
+  return `${a[(a.length - 1)]}, ${a[0]}`;
 }
 console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
 
@@ -29,9 +29,22 @@ function footballPoints(wins, ties) {
 console.log(footballPoints(14, 8));
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(a) {
+  let inic = a[0];
+  let quant = 0;
+  for (let maior of a) {
+    if (maior > inic) {
+      inic = maior;
+    }
+  }
+  for (let maior of a) {
+    if (maior == inic) {
+      quant++;
+    }
+  }
+  return quant;
 }
+console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 
 // Desafio 7
 function catAndMouse() {
