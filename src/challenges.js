@@ -36,10 +36,8 @@ function highestCount(a) {
     if (maior > inic) {
       inic = maior;
     }
-  }
-  for (let maior of a) {
     if (maior === inic) {
-      quant++;
+      quant += 1;
     }
   }
   return quant;
@@ -48,53 +46,80 @@ console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
-  if (mouse > cat1){
-    cat1 = mouse - cat1;
-  }
-  else {
-    cat1 = cat1 - mouse;
-  }
-  if (mouse > cat2){
-    cat2 = mouse - cat2;
-  }
-  else {
-    cat2 = cat2 - mouse;
-  }
-  if (cat1 < cat2){
-    return 'cat1';
-  } else if (cat1 > cat2){
-    return 'cat2';
+  cat1 = Math.abs(mouse - cat1);
+  cat2 = Math.abs(cat2 - mouse);
+  let result = '';
+  if (cat1 < cat2) {
+    result = 'cat1';
+  } else if (cat1 > cat2) {
+    result = 'cat2';
   } else {
-    return "os gatos trombam e o rato foge";
+    result = 'os gatos trombam e o rato foge';
   }
+  return result;
 }
-console.log(catAndMouse(5, 3, 7));
+console.log(catAndMouse(5, 7, 6));
 
 // Desafio 8
 function fizzBuzz(array) {
   let divisor = [];
-  for (let iterator of array) {
-    if (iterator % 3 === 0 && iterator % 5 === 0) {
+  for (let a of array) {
+    if (a % 3 === 0 && a % 5 === 0) {
       divisor.push('fizzBuzz');
-    } else if (iterator % 3 === 0 && iterator % 5 != 0) {
+    } else if (a % 3 === 0 && a % 5 !== 0) {
       divisor.push('fizz');
-    } else if (iterator % 3 != 0 && iterator % 5 === 0) {
+    } else if (a % 3 !== 0 && a % 5 === 0) {
       divisor.push('buzz');
     } else {
       divisor.push('bug!');
     }
-    }
+  }
   return divisor;
 }
 console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(term) {
+  let code = [];
+  for (let a = 0; a < term.length; a++) {
+    if (term[a] === 'a') {
+      code[a] = '1';
+    } else if (term[a] === 'e') {
+      code[a] = '2';
+    } else if (term[a] === 'i') {
+      code[a] = '3';
+    } else if (term[a] === 'o') {
+      code[a] = '4';
+    } else if (term[a] === 'u') {
+      code[a] = '5';
+    } else {
+      code[a] = term[a];
+    }
+  }
+  return code.join('');
 }
-function decode() {
-  // seu código aqui
+console.log(encode('hi there!'));
+
+function decode(code) {
+  let decode = [];
+  for (let a = 0; a < code.length; a++) {
+    if (code[a] === '1') {
+      decode[a] = 'a';
+    } else if (code[a] === '2') {
+      decode[a] = 'e';
+    } else if (code[a] === '3') {
+      decode[a] = 'i';
+    } else if (code[a] === '4') {
+      decode[a] = 'o';
+    } else if (code[a] === '5') {
+      decode[a] = 'u';
+    } else {
+      decode[a] = code[a];
+    }
+  }
+  return decode.join('');
 }
+console.log(decode('h3 th2r2!'));
 
 // Desafio 10
 function techList() {
