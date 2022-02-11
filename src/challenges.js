@@ -139,13 +139,9 @@ function techList(array, nome) {
   array.sort();
   if (array === []) {
     result = 'Vazio!';
-  } else {
-    for (let a of array) {
-      result.push({
-        tech: a,
-        name: nome
-      });
-    }
+  } 
+  for (let a of array) {
+    result.push({ tech: a, name: nome });
   }
   return result;
 }
