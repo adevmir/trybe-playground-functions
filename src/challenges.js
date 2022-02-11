@@ -134,14 +134,14 @@ function decode(code) {
 console.log(decode('h3 th2r2!'));
 
 // Desafio 10
-function techList(array, name) {
+function techList(array, nome) {
   let result = [];
-  array.sort();
-  if (array === []) {
+  if (array !== []) {
+    for (let int of array.sort()) {
+      result.push({ tech: int, name: nome });
+    }
+  } else {
     result = 'Vazio!';
-  } 
-  for (let a of array) {
-    result.push({ tech: a, name: name });
   }
   return result;
 }
