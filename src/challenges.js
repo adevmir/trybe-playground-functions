@@ -136,11 +136,15 @@ console.log(decode('h3 th2r2!'));
 // Desafio 10
 function techList(array, nome) {
   let result = [];
+  array.sort();
   if (array === []) {
     result = 'Vazio!';
   } else {
     for (let a of array) {
-      result.push({ tech: a, name: nome });
+      result.push({
+        tech: a,
+        name: nome
+      });
     }
   }
   return result;
