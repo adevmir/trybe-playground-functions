@@ -35,6 +35,7 @@ function highestCount(a) {
   for (let maior of a) {
     if (maior > inic) {
       inic = maior;
+      quant = 0;
     }
     if (maior === inic) {
       quant += 1;
@@ -42,7 +43,7 @@ function highestCount(a) {
   }
   return quant;
 }
-console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
+console.log(highestCount([6, 6, 9, 3, 9, 5, 7]));
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
@@ -61,18 +62,29 @@ function catAndMouse(mouse, cat1, cat2) {
 console.log(catAndMouse(5, 7, 6));
 
 // Desafio 8
+function fizzBuzzDivisor(element) {
+  if (element === 3) {
+    element = 'fizzBuzz';
+  } else if (element === 1) {
+    element = 'fizz';
+  } else if (element === 2) {
+    element = 'buzz';
+  } else {
+    element = 'bug!';
+  }
+  return element;
+}
+
 function fizzBuzz(array) {
   let divisor = [];
   for (let a of array) {
-    if (a % 3 === 0 && a % 5 === 0) {
-      divisor.push('fizzBuzz');
-    } else if (a % 3 === 0 && a % 5 !== 0) {
-      divisor.push('fizz');
-    } else if (a % 3 !== 0 && a % 5 === 0) {
-      divisor.push('buzz');
-    } else {
-      divisor.push('bug!');
+    let element = 0;
+    if (a % 3 === 0) {
+      element += 1;
+    } else if (a % 5 === 0) {
+      element += 2;
     }
+    divisor.push(fizzBuzzDivisor(element));
   }
   return divisor;
 }
