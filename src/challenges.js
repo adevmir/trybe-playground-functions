@@ -91,47 +91,76 @@ function fizzBuzz(array) {
 console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
+
+function ecode(element) {
+  if (element === 'a') {
+    element = '1';
+  } else if (element === 'e') {
+    element = '2';
+  } else if (element === 'i') {
+    element = '3';
+  } else if (element === 'o') {
+    element = '4';
+  } else {
+    element = '5';
+  }
+  return element;
+}
+
+function vogalE(element) {
+  let table = ['a', 'e', 'i', 'o', 'u'];
+  for (let char of table) {
+    if (element === char) {
+      element = ecode(element);
+    }
+  }
+  return element;
+}
+
 function encode(term) {
   let code = [];
-  for (let a = 0; a < term.length; a++) {
-    if (term[a] === 'a') {
-      code[a] = '1';
-    } else if (term[a] === 'e') {
-      code[a] = '2';
-    } else if (term[a] === 'i') {
-      code[a] = '3';
-    } else if (term[a] === 'o') {
-      code[a] = '4';
-    } else if (term[a] === 'u') {
-      code[a] = '5';
-    } else {
-      code[a] = term[a];
-    }
+  for (let a = 0; a < term.length; a += 1) {
+    let element = term[a];
+    code.push(vogalE(element));
   }
   return code.join('');
 }
 console.log(encode('hi there!'));
 
-function decode(code) {
-  let dcode = [];
-  for (let a = 0; a < code.length; a += 1) {
-    if (code[a] === '1') {
-      dcode[a] = 'a';
-    } else if (code[a] === '2') {
-      dcode[a] = 'e';
-    } else if (code[a] === '3') {
-      dcode[a] = 'i';
-    } else if (code[a] === '4') {
-      dcode[a] = 'o';
-    } else if (code[a] === '5') {
-      dcode[a] = 'u';
-    } else {
-      dcode[a] = code[a];
+function dcode(element) {
+  if (element === '1') {
+    element = 'a';
+  } else if (element === '2') {
+    element = 'e';
+  } else if (element === '3') {
+    element = 'i';
+  } else if (element === '4') {
+    element = 'o';
+  } else {
+    element = 'u';
+  }
+  return element;
+}
+
+function vogalD(element) {
+  let table = ['1', '2', '3', '4', '5'];
+  for (let char of table) {
+    if (element === char) {
+      element = dcode(element);
     }
   }
-  return dcode.join('');
+  return element;
 }
-console.log(decode('h3 th2r2!'));
+
+function decode(term) {
+  let code = [];
+  for (let a = 0; a < term.length; a += 1) {
+    let element = term[a];
+    code.push(vogalD(element));
+  }
+  return code.join('');
+}
+console.log(decode('hi there!'));
 
 // Desafio 10
 function techList(array, nome) {
