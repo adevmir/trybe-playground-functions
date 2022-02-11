@@ -113,30 +113,39 @@ function encode(term) {
 console.log(encode('hi there!'));
 
 function decode(code) {
-  let decode = [];
-  for (let a = 0; a < code.length; a++) {
+  let dcode = [];
+  for (let a = 0; a < code.length; a += 1) {
     if (code[a] === '1') {
-      decode[a] = 'a';
+      dcode[a] = 'a';
     } else if (code[a] === '2') {
-      decode[a] = 'e';
+      dcode[a] = 'e';
     } else if (code[a] === '3') {
-      decode[a] = 'i';
+      dcode[a] = 'i';
     } else if (code[a] === '4') {
-      decode[a] = 'o';
+      dcode[a] = 'o';
     } else if (code[a] === '5') {
-      decode[a] = 'u';
+      dcode[a] = 'u';
     } else {
-      decode[a] = code[a];
+      dcode[a] = code[a];
     }
   }
-  return decode.join('');
+  return dcode.join('');
 }
 console.log(decode('h3 th2r2!'));
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, nome) {
+  let result = [];
+  if (array === []) {
+    result = 'Vazio!';
+  } else {
+    for (let a of array) {
+      result.push({ tech: a, name: nome });
+    }
+  }
+  return result;
 }
+console.log(techList(['React', 'Just', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
 
 module.exports = {
   calcArea,
