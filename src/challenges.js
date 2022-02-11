@@ -81,7 +81,7 @@ function fizzBuzz(array) {
     let element = 0;
     if (a % 3 === 0) {
       element += 1;
-    } else if (a % 5 === 0) {
+    } if (a % 5 === 0) {
       element += 2;
     }
     divisor.push(fizzBuzzDivisor(element));
